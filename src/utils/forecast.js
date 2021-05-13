@@ -8,9 +8,10 @@ if (error) {
         } else if (body.error) {
             callback('Unable to find location Services!',undefined)
         } else {
-            callback(undefined, 'In '+body.location.name +' weather is ' +
+            callback(undefined, 'In '+ body.location.name +' weather is ' + body.current.weather_icons[0] + 
              body.current.weather_descriptions[0] + ' and temperature is ' +
-              body.current.temperature )
+              body.current.temperature + " but it feels like " + body.current.feelslike +
+              " last updated at " + body.location.localtime)
         }
 
 })
